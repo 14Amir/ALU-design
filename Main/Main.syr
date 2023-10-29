@@ -1,0 +1,543 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: Main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Main"
+Output Format                      : NGC
+Target Device                      : xc3s400-4-fg320
+
+---- Source Options
+Top Module Name                    : Main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" in Library work.
+Entity <main> compiled.
+Entity <main> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Main> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <Main> in library <work> (Architecture <behavioral>).
+INFO:Xst:1561 - "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" line 218: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" line 255: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" line 292: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" line 334: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" line 371: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" line 410: Mux is complete : default of case is discarded
+INFO:Xst:1561 - "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" line 447: Mux is complete : default of case is discarded
+WARNING:Xst:819 - "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" line 63: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <A>, <B>
+Entity <Main> analyzed. Unit <Main> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Main>.
+    Related source file is "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd".
+WARNING:Xst:1306 - Output <Cout> is never assigned.
+WARNING:Xst:646 - Signal <rslt2<7:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | en                        (positive)           |
+    | Reset              | async                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | s1                                             |
+    | Power Up State     | s1                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 7-bit latch for signal <R1_seg1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 7-bit latch for signal <R1_seg2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 7-bit latch for signal <R2_seg1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 7-bit latch for signal <R2_seg2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 16x7-bit ROM for signal <R1_seg1$mux0001> created at line 302.
+    Found 16x7-bit ROM for signal <R1_seg2$mux0001> created at line 339.
+    Found 16x7-bit ROM for signal <R2_seg1$mux0001> created at line 378.
+    Found 16x7-bit ROM for signal <R2_seg2$mux0001> created at line 415.
+    Found 16x7-bit ROM for signal <R3_seg1$mux0001> created at line 186.
+    Found 16x7-bit ROM for signal <R3_seg2$mux0001> created at line 223.
+    Found 16x7-bit ROM for signal <R4_seg1$mux0001> created at line 260.
+    Found 4-bit register for signal <flag>.
+    Found 8-bit register for signal <C>.
+    Found 7-bit register for signal <R3_seg1>.
+    Found 7-bit register for signal <R3_seg2>.
+    Found 7-bit register for signal <R4_seg1>.
+    Found 4-bit register for signal <flg_s>.
+    Found 8-bit comparator equal for signal <flg_s_0$cmp_eq0000> created at line 99.
+    Found 8-bit comparator greater for signal <flg_s_0$cmp_gt0000> created at line 98.
+    Found 8-bit register for signal <rslt>.
+    Found 16-bit register for signal <rslt2>.
+    Found 8x8-bit multiplier for signal <rslt2$mult0000> created at line 127.
+    Found 8-bit adder for signal <rslt_0$add0000> created at line 112.
+    Found 8-bit subtractor for signal <rslt_0$sub0000> created at line 103.
+    Found 1-bit xor2 for signal <rslt_0$xor0000> created at line 139.
+    Found 1-bit xor2 for signal <rslt_1$xor0000> created at line 139.
+    Found 1-bit xor2 for signal <rslt_2$xor0000> created at line 139.
+    Found 1-bit xor2 for signal <rslt_3$xor0000> created at line 139.
+    Found 1-bit xor2 for signal <rslt_4$xor0000> created at line 139.
+    Found 1-bit xor2 for signal <rslt_5$xor0000> created at line 139.
+    Found 1-bit xor2 for signal <rslt_6$xor0000> created at line 139.
+    Found 1-bit xor2 for signal <rslt_7$xor0000> created at line 139.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   7 ROM(s).
+	inferred  61 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred   2 Comparator(s).
+Unit <Main> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 7
+ 16x7-bit ROM                                          : 7
+# Multipliers                                          : 1
+ 8x8-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 2
+ 8-bit adder                                           : 1
+ 8-bit subtractor                                      : 1
+# Registers                                            : 18
+ 1-bit register                                        : 12
+ 16-bit register                                       : 1
+ 4-bit register                                        : 1
+ 7-bit register                                        : 3
+ 8-bit register                                        : 1
+# Latches                                              : 4
+ 7-bit latch                                           : 4
+# Comparators                                          : 2
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 1
+# Xors                                                 : 8
+ 1-bit xor2                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ s1    | 00
+ s2    | 01
+ s3    | 11
+ s4    | 10
+-------------------
+WARNING:Xst:2677 - Node <rslt2_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_3> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_4> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_5> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_6> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_7> of sequential type is unconnected in block <Main>.
+
+Synthesizing (advanced) Unit <Main>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_R3_seg1_mux0001> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_R3_seg2_mux0001> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_R4_seg1_mux0001> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <Main> synthesized (advanced).
+WARNING:Xst:2677 - Node <rslt2_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_3> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_4> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_5> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_6> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <rslt2_7> of sequential type is unconnected in block <Main>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 7
+ 16x7-bit ROM                                          : 7
+# Multipliers                                          : 1
+ 8x8-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 2
+ 8-bit adder                                           : 1
+ 8-bit subtractor                                      : 1
+# Registers                                            : 53
+ Flip-Flops                                            : 53
+# Latches                                              : 4
+ 7-bit latch                                           : 4
+# Comparators                                          : 2
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 1
+# Xors                                                 : 8
+ 1-bit xor2                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <flag_2> has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <flg_s_2> has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Main> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 53
+ Flip-Flops                                            : 53
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Main.ngr
+Top Level Output File Name         : Main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 86
+
+Cell Usage :
+# BELS                             : 279
+#      GND                         : 1
+#      LUT2                        : 33
+#      LUT3                        : 55
+#      LUT3_L                      : 1
+#      LUT4                        : 123
+#      LUT4_D                      : 2
+#      LUT4_L                      : 10
+#      MUXCY                       : 22
+#      MUXF5                       : 15
+#      VCC                         : 1
+#      XORCY                       : 16
+# FlipFlops/Latches                : 81
+#      FDCE                        : 13
+#      FDE                         : 40
+#      LD                          : 28
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 84
+#      IBUF                        : 23
+#      OBUF                        : 61
+# MULTs                            : 1
+#      MULT18X18                   : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400fg320-4 
+
+ Number of Slices:                      122  out of   3584     3%  
+ Number of Slice Flip Flops:             53  out of   7168     0%  
+ Number of 4 input LUTs:                224  out of   7168     3%  
+ Number of IOs:                          86
+ Number of bonded IOBs:                  85  out of    221    38%  
+    IOB Flip Flops:                      28
+ Number of MULT18X18s:                    1  out of     16     6%  
+ Number of GCLKs:                         2  out of      8    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 53    |
+en                                 | IBUF+BUFG              | 28    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+async                              | IBUF                   | 13    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.917ns (Maximum Frequency: 144.571MHz)
+   Minimum input arrival time before clock: 12.027ns
+   Maximum output required time after clock: 7.165ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.917ns (frequency: 144.571MHz)
+  Total number of paths / destination ports: 276 / 93
+-------------------------------------------------------------------------
+Delay:               6.917ns (Levels of Logic = 4)
+  Source:            rslt2_14 (FF)
+  Destination:       flg_s_1 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: rslt2_14 to flg_s_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.720   1.140  rslt2_14 (rslt2_14)
+     LUT4:I0->O            1   0.551   0.827  flg_s_1_mux000052 (flg_s_1_mux000052)
+     LUT4:I3->O            1   0.551   0.996  flg_s_1_mux000066 (flg_s_1_mux000066)
+     LUT3:I1->O            1   0.551   0.827  flg_s_1_mux000074 (flg_s_1_mux000074)
+     LUT4:I3->O            1   0.551   0.000  flg_s_1_mux0000203 (flg_s_1_mux0000)
+     FDE:D                     0.203          flg_s_1
+    ----------------------------------------
+    Total                      6.917ns (3.127ns logic, 3.790ns route)
+                                       (45.2% logic, 54.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1396 / 74
+-------------------------------------------------------------------------
+Offset:              12.027ns (Levels of Logic = 7)
+  Source:            slct<3> (PAD)
+  Destination:       flg_s_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: slct<3> to flg_s_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            33   0.821   2.198  slct_3_IBUF (slct_3_IBUF)
+     LUT3:I0->O           18   0.551   1.485  rslt_0_cmp_eq000211 (N91)
+     LUT4:I2->O            3   0.551   1.102  flg_s_0_mux0000111 (N104)
+     LUT3:I1->O            2   0.551   0.945  flg_s_0_mux000026 (flg_s_0_mux000026)
+     LUT3:I2->O            1   0.551   0.827  flg_s_0_mux000016_SW0 (N41)
+     LUT4:I3->O            1   0.551   1.140  flg_s_0_mux000040_SW1 (N39)
+     LUT4:I0->O            1   0.551   0.000  flg_s_0_mux000098 (flg_s_0_mux0000)
+     FDE:D                     0.203          flg_s_0
+    ----------------------------------------
+    Total                     12.027ns (4.330ns logic, 7.697ns route)
+                                       (36.0% logic, 64.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'en'
+  Total number of paths / destination ports: 112 / 28
+-------------------------------------------------------------------------
+Offset:              3.459ns (Levels of Logic = 2)
+  Source:            B<7> (PAD)
+  Destination:       R2_seg2_0 (LATCH)
+  Destination Clock: en falling
+
+  Data Path: B<7> to R2_seg2_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.821   1.884  B_7_IBUF (B_7_IBUF)
+     LUT4:I0->O            1   0.551   0.000  Mrom_R2_seg2_mux000141 (Mrom_R2_seg2_mux00014)
+     LD:D                      0.203          R2_seg2_4
+    ----------------------------------------
+    Total                      3.459ns (1.575ns logic, 1.884ns route)
+                                       (45.5% logic, 54.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              7.165ns (Levels of Logic = 1)
+  Source:            R4_seg1_6 (FF)
+  Destination:       R4_seg1<6> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: R4_seg1_6 to R4_seg1<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.720   0.801  R4_seg1_6 (R4_seg1_6)
+     OBUF:I->O                 5.644          R4_seg1_6_OBUF (R4_seg1<6>)
+    ----------------------------------------
+    Total                      7.165ns (6.364ns logic, 0.801ns route)
+                                       (88.8% logic, 11.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'en'
+  Total number of paths / destination ports: 28 / 28
+-------------------------------------------------------------------------
+Offset:              7.078ns (Levels of Logic = 1)
+  Source:            R1_seg1_6 (LATCH)
+  Destination:       R1_seg1<6> (PAD)
+  Source Clock:      en falling
+
+  Data Path: R1_seg1_6 to R1_seg1<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.633   0.801  R1_seg1_6 (R1_seg1_6)
+     OBUF:I->O                 5.644          R1_seg1_6_OBUF (R1_seg1<6>)
+    ----------------------------------------
+    Total                      7.078ns (6.277ns logic, 0.801ns route)
+                                       (88.7% logic, 11.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.42 secs
+ 
+--> 
+
+Total memory usage is 4513684 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   25 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
+

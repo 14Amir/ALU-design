@@ -1,0 +1,9 @@
+V3 3
+FL "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" 2022/06/30.21:26:09 P.20131013
+EN work/Main 1656608184 \
+      FL "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
+      PB ieee/NUMERIC_STD 1381692181
+AR work/Main/Behavioral 1656608185 \
+      FL "E:/University/term 6/logic labratory/Project_Final/Main/Main.vhd" \
+      EN work/Main 1656608184
